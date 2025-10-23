@@ -14,7 +14,9 @@ const Hero = () => {
 
             {/* Right Side */}
             <div className="hero-right">
-                {/* USE YOUR ILLUSTRATION from /public/images/hero-image.png */}
+                {/* Make sure you have an image in:
+                  /public/images/hero-image.png 
+                */}
                 <img src="/images/hero-image.png" alt="Classroom Illustration" />
             </div>
         </div>

@@ -4,7 +4,7 @@ import './App.css';
 
 // Import all your components
 import Navbar from './components/Navbar';
-import Hero from './components/hero';
+import Hero from './components/Hero';
 import InfoCards from './components/InfoCards';
 import StartTeaching from './components/StartTeaching';
 import HowToTeach from './components/HowToTeach';
