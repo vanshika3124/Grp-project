@@ -47,36 +47,103 @@
 }
 
 /* ================== HERO SECTION ================== */
+/* ... (keep all your other CSS) ... */
+
+/* ================== HERO SECTION (Updated) ================== */
 .hero {
-    background: var(--color-light-blue);
-    padding: 10rem 0 4rem; /* 10rem top padding for fixed navbar */
+    background: #CFE7F5;
+    padding: 10rem 0 6rem; /* 10rem top, 6rem bottom (I made it bigger!) */
     overflow: hidden;
 }
 
+/* src/App.css */
+
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* 👇 THIS IS THE KEY CHANGE 👇 */
+    /* Old: 1.1fr 1fr (Text was bigger) */
+    /* New: 1fr 1.1fr (Image is bigger) */
+    grid-template-columns: 1fr 1.1fr; 
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
+    padding-bottom: 3rem;
 }
 
 .hero-left h1 {
-    font-size: 3rem;
-    color: var(--color-dark);
-    line-height: 1.2;
-    margin-bottom: 1rem;
+  font-size: 48px;
+  /* THIS IS THE FIX 
+     Use 600 or 500. (You probably have 700 or 'bold' right now) */
+  font-weight: 600; 
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .hero-left p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  font-size: 2rem; 
+  /* Make this 'normal' (which is 400) */
+  font-weight: 400; 
+  margin-bottom: 2rem;
 }
 
 .hero-right img {
-    max-width: 500px;
-    margin-left: auto;
+ 
+  /* 1. BADA (BIGGER) */
+  /* Isko 580px se bada karo, e.g. 650px */
+  max-width: 650px; 
+
+  /* 2. UPAR (UP) */
+  /* Ye line add karo, image upar chali jayegi */
+  margin-top: -40px; /* Aap -30px ya -50px try kar sakte ho */
+ 
+  margin-left: auto;
 }
 
+/* ================== INFO CARDS (Updated for new text) ================== */
+/* src/App.css */
+
+/* ================== INFO CARDS (Updated) ================== */
+.info-cards {
+    padding: 2rem 0;
+    /* margin-top: -4rem;  <-- DELETE THIS LINE */
+    position: relative;
+    /* z-index: 5; <-- You can delete this too */
+     
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: var(--color-white);
+    padding: 2rem 1.5rem; /* Adjusted padding */
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border: 1px solid black;
+}
+
+.card-icon {
+    width: 60px; 
+    height: 60px;
+    margin: 0 auto 1rem;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.5; /* Added for better text wrapping */
+}
+
+/* ... (keep all your other CSS) ... */
 /* ================== INFO CARDS ================== */
 .info-cards {
     padding: 2rem 0;
@@ -113,6 +180,30 @@
 
 .card p {
     font-size: 0.9rem;
+}
+
+/* This is the MAIN button style (shape, size, text) */
+.btn {
+  /* Button Shape & Color */
+  display: inline-block;
+  border: none;
+  border-radius: 999px;  /* This makes the pill shape */
+  padding: 12px 30px;   /* Adjust spacing */
+
+  /* Text Styles */
+  color: #FFFFFF;       /* White text */
+  font-size: 1.1rem;
+  font-weight: 700;     /* Bold text */
+  text-decoration: none; 
+  text-align: center;
+  
+  /* Interaction */
+  cursor: pointer;
+}
+
+/* This class just adds the COLOR */
+.btn-green {
+  background-color: #28CB8B; /* That green color */
 }
 
 /* ================== START TEACHING ================== */
