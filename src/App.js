@@ -2,11 +2,17 @@
 import React from 'react';
 import './App.css'; 
 
-// Import your components
+// Import all your components
 import Navbar from './components/Navbar';
 import Hero from './components/hero';
 import InfoCards from './components/InfoCards';
-import StartTeaching from './components/StartTeaching'; // 1. IMPORT IT
+import StartTeaching from './components/StartTeaching';
+import HowToTeach from './components/HowToTeach';
+import Reviews from './components/Reviews';
+import FAQs from './components/FAQs';
+import Benefits from './components/Benefits';
+import Stats from './components/Stats';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,10 +20,13 @@ function App() {
       <Navbar />
       <Hero />
       <InfoCards />
-      <StartTeaching /> {/* 2. ADD IT HERE */}
-
-      {/* ... OTHER COMPONENTS WILL GO HERE ... */}
-      
+      <StartTeaching />
+      <HowToTeach />
+      <Reviews />
+      <FAQs />
+      <Benefits />
+      <Stats />
+      <Footer />
     </div>
   );
 }

@@ -1,15 +1,13 @@
 // src/components/Navbar.js
 import React from 'react';
-// Make sure to add your logo to the src/assets folder
-// import Logo from '../assets/logo.png'; 
 
 const Navbar = () => {
   return (
     <nav className="navbar">
         <div className="container nav-container">
             <a href="#" className="nav-logo">
-                {/* <img src={Logo} alt="SmartSync Logo" /> */}
-                <img src="logo.png" alt="SmartSync Logo" style={{width: '30px', height: '30px'}} />
+                {/* USE YOUR LOGO from /public/images/logo.png */}
+                <img src="/images/logo.png" alt="SmartSync Logo" />
                 SmartSync
             </a>
             <ul className="nav-menu">
