@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* ================== NAVBAR ================== */
+.navbar {
+    background: var(--color-white);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-logo img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-menu {
+    display: flex;
+    gap: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-menu a {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+/* ================== HERO SECTION ================== */
+.hero {
+    background: var(--color-light-blue);
+    padding: 10rem 0 4rem; /* 10rem top padding to account for fixed navbar */
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-left h1 {
+    font-size: 3rem;
+    color: var(--color-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-left p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-right img {
+    max-width: 500px;
+    margin-left: auto;
+}
+
+/* ================== INFO CARDS ================== */
+.info-cards {
+    padding: 2rem 0;
+    margin-top: -3rem; /* This pulls the cards up over the hero bg */
+    position: relative;
+    z-index: 5;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.card-icon {
+    width: 60px; /* Adjust as needed */
+    height: 60px;
+    margin: 0 auto 1rem;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
 }

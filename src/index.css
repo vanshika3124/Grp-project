@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #3b82f6; /* Blue */
+    --color-green: #22c55e;   /* Green */
+    --color-dark: #1e293b;    /* Dark Blue/Grey */
+    --color-light-blue: #f0f9ff; /* Lighter blue for hero bg */
+    --color-white: #ffffff;
+    --color-text: #334155;
+    --color-bg: #f8fafc;
+    
+    --container-width: 88%;
+    --font-main: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background: var(--color-white);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 300ms ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background: #2563eb; /* Darker blue */
+}
+
+.btn-green {
+    background: var(--color-green);
+    color: var(--color-white);
+}
+
+.btn-green:hover {
+    background: #16a34a; /* Darker green */
 }
