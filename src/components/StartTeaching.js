@@ -1,30 +1,37 @@
-// src/components/StartTeaching.js
-import React from 'react';
+import React from "react";
 
 const StartTeaching = () => {
   return (
     <section className="start-teaching">
-      <div className="container">
-        <h2 className="section-title">Start Teaching</h2>
+      <h2 className="start-section-title">
+        Start <span>Teaching</span>
+      </h2>
 
-        {/* Teacher Profile Section */}
-        <div className="teaching-profile">
-          <div className="profile-card">
-            {/* USE YOUR TEACHER PHOTO from /public/images/teacher.png */}
-            <img src="/images/teacher.png" alt="Anjali Singh" />
-            <h3>Anjali Singh</h3>
-            <p>You have successfully created 2 classrooms. 150 students</p>
-            <p>⭐ 15 years+ experience</p>
-          </div>
-          <div className="profile-placeholders">
-            <div className="placeholder-box"></div>
-            <div className="placeholder-box"></div>
-            <div className="placeholder-box"></div>
-          </div>
+      <div className="teaching-profile">
+        {/* Left Side - Teacher Image */}
+        <div className="teacher-photo">
+          <img src="/images/teacher.png" alt="Anjali Singh" />
+        </div>
+
+        {/* Center - Profile Info */}
+        <div className="teacher-info">
+          <h3>Anjali Singh</h3>
+          <p>
+            You have taken 100+ quizzes.
+            <br />2 classrooms. 150 students
+          </p>
+          <p className="experience"> 15 years+ experience</p>
+        </div>
+
+        {/* Right Side - Buttons */}
+        <div className="action-buttons">
+          <button className="quiz-btn">create a quiz</button>
+          <button className="classroom-btn">👥 Go to classroom</button>
+          <button className="progress-btn">📈 Track progress</button>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default StartTeaching;

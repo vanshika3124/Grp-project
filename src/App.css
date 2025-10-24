@@ -3,47 +3,63 @@
 /* ================== NAVBAR ================== */
 .navbar {
     background: var(--color-white);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid #e5e7eb;
+    height: 69px;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    position: relative;
 }
+
+/* ... (navbar styles) ... */
 
 .nav-logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem; /* <-- ISKO BADA KARO (from 1.5rem) */
     font-weight: 600;
-    color: var(--color-dark);
+    color: #203EE5;
+    margin-top: 0;
+  padding-top: 0;
+  position: relative;
 }
 
 .nav-logo img {
-    width: 30px; 
-    height: 30px;
+    width: 76px; 
+    height: 76px; 
+     margin-top: -15px ;
 }
+
+
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
 }
 
 .nav-menu a {
-    color: var(--color-text);
-    font-weight: 500;
+    color: #000000;
+    font-weight: 600;
 }
 
 .nav-menu a:hover {
     color: var(--color-primary);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* This puts space between the links and the button */
 }
 
 /* ================== HERO SECTION ================== */
@@ -54,6 +70,7 @@
     background: #CFE7F5;
     padding: 10rem 0 6rem; /* 10rem top, 6rem bottom (I made it bigger!) */
     overflow: hidden;
+    border-radius: 20px;
 }
 
 /* src/App.css */
@@ -102,85 +119,58 @@
 /* ================== INFO CARDS (Updated for new text) ================== */
 /* src/App.css */
 
-/* ================== INFO CARDS (Updated) ================== */
-.info-cards {
-    padding: 2rem 0;
-    /* margin-top: -4rem;  <-- DELETE THIS LINE */
-    position: relative;
-    /* z-index: 5; <-- You can delete this too */
-     
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.card {
-    background: var(--color-white);
-    padding: 2rem 1.5rem; /* Adjusted padding */
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    border: 1px solid black;
-}
-
-.card-icon {
-    width: 60px; 
-    height: 60px;
-    margin: 0 auto 1rem;
-}
-
-.card h3 {
-    font-size: 1.25rem;
-    color: var(--color-dark);
-    margin-bottom: 0.5rem;
-}
-
-.card p {
-    font-size: 0.9rem;
-    line-height: 1.5; /* Added for better text wrapping */
-}
-
+ 
 /* ... (keep all your other CSS) ... */
 /* ================== INFO CARDS ================== */
-.info-cards {
-    padding: 2rem 0;
-    margin-top: -3rem; /* Pulls cards up over hero bg */
-    position: relative;
-    z-index: 5;
-}
-
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 4rem; /* reduced spacing between cards */
+  flex-wrap: wrap;
 }
 
 .card {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 5px grey;
+  width: 280px;     /* smaller width */
+  height: 200px;    /* smaller height */
+  border: 1.5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* hover animation (optional but looks modern) */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* icon smaller and spaced nicely */
 .card-icon {
-    width: 60px; 
-    height: 60px;
-    margin: 0 auto 1rem;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 0.8rem;
 }
 
+/* heading and text adjusted */
 .card h3 {
-    font-size: 1.25rem;
-    color: var(--color-dark);
-    margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 
 .card p {
-    font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #333;
 }
+
 
 /* This is the MAIN button style (shape, size, text) */
 .btn {
@@ -206,66 +196,242 @@
   background-color: #28CB8B; /* That green color */
 }
 
-/* ================== START TEACHING ================== */
+/* ================== START TEACHING SECTION ================== */
+/* ================== START TEACHING SECTION ================== */
 .start-teaching {
-    padding: 4rem 0;
-    background: var(--color-white);
+  padding: 4rem 0;
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
 }
 
+/* ========== Section Title ========== */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  margin-left: 8%;
+  letter-spacing: 0.5px;
+}
+
+.section-title span {
+  color: #2146d0; 
+  /* ^^^ YEH SAHI HAI. Check your HTML, it should be:
+     <h2 class="section-title">Start <span>Teaching</span></h2> */
+}
+
+/* ========== Teacher Profile Card ========== */
 .teaching-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: #F9F9F9; /* CHANGED: White background */
+  border: 2px solid #e0e0e0; /* CHANGED: Thicker, lighter border */
+  border-radius: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  box-shadow: none; /* CHANGED: Removed shadow */
+  height: 300px;
+}
+
+/* ========== Teacher Photo ========== */
+.teacher-photo img {
+  width: 230px;
+  height: 300px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  border: none; /* CHANGED: Removed border */
+}
+
+/* ========== Teacher Info ========== */
+.teacher-info {
+  flex: 1;
+  text-align: center;
+}
+
+.teacher-info h3 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #2146d0;
+  margin-bottom: 0.6rem;
+}
+
+.teacher-info p {
+  color: #333333; /* CHANGED: Darker text */
+  font-size: 1rem; /* CHANGED: Slightly smaller text */
+  line-height: 1.6;
+  margin: 0.4rem 0;
+}
+
+.teacher-info strong {
+  color: #000;
+}
+
+/* ========== Experience Line ========== */
+.experience {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.experience::before {
+  content: "⭐";
+  font-size: 1.4rem;
+}
+
+/* ========== Action Buttons (Right Side) ========== */
+.action-buttons button {
+  display: flex;
+  flex-direction: column; /* YEH ZAROORI HAI */
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem; /* Icon aur text ke beech ka gap */
+}
+
+.action-buttons button img {
+  width: 32px; /* Icon ka size */
+  height: 32px;
+  object-fit: contain;
+}
+
+.action-buttons button {
+  /* border: none; <-- Replaced by border-style/width */
+  border-style: solid; /* ADDED */
+  border-width: 2px; /* ADDED */
+  font-weight: 600;
+  padding: 1rem; /* CHANGED: Adjusted padding */
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem; /* CHANGED: Smaller text */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 170px; /* CHANGED: Made narrower */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* CHANGED: Stacks icon on top of text */
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem; /* CHANGED: Gap between icon and text */
+}
+
+/* === ADDED: Rule for icons inside buttons === */
+/* (Assuming you are using <img> tags for icons) */
+.action-buttons button img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.quiz-btn {
+  background-color: #eef2ff; /* CHANGED: Lighter BG */
+  border-color: #c7d2fe; /* CHANGED: Border color */
+  color: #000;
+}
+
+.classroom-btn {
+  background-color: #d1fae5; /* CHANGED: Lighter BG */
+  border-color: #a7f3d0; /* CHANGED: Border color */
+  color: #000;
+}
+
+.progress-btn {
+  background-color: #ffedd5; /* CHANGED: Lighter BG */
+  border-color: #fdba74; /* CHANGED: Border color */
+  color: #000;
+}
+
+.action-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* CHANGED: Softer shadow */
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 950px) {
+  .section-title {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .teaching-profile {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .teacher-photo img {
+    width: 180px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .action-buttons button {
+    width: auto;
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* ================== HOW TO TEACH ================== */
+.how-to-teach {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 1.5rem;
+    padding: 3rem;
+}
+
+.how-to-teach h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.how-to-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
-    margin-bottom: 4rem;
 }
 
-.profile-card {
-    background: var(--color-white);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
-    border: 1px solid #e5e7eb;
+.how-to-steps ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
-.profile-card img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+.how-to-steps li {
+    font-size: 1.1rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.how-to-steps li::before {
+    content: '✓';
+    font-weight: 900;
+    color: var(--color-green);
+    font-size: 1.2rem;
+}
+
+.how-to-steps li span {
+    font-weight: 600;
+}
+
+.how-to-image img {
+    max-width: 400px;
     margin: 0 auto;
 }
 
-.profile-card h3 {
-    font-size: 1.5rem;
-    color: var(--color-dark);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.profile-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.profile-card p:last-child {
-    font-weight: 600;
-    color: var(--color-dark);
-    margin-top: 1rem;
-}
-
-.profile-placeholders {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.placeholder-box {
-    background: var(--color-white);
-    border: 1px dashed #cbd5e1;
-    height: 80px;
-    border-radius: 0.5rem;
-}
 
 /* ================== HOW TO TEACH ================== */
 .how-to-teach {

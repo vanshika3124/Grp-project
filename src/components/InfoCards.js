@@ -18,18 +18,20 @@ const InfoCards = () => {
             <div className="container cards-container">
                 <Card 
                     icon="icon-quiz.png" // Replace with your icon name
-                    title="Quiz Space"
-                    text="Easy analysis with live quiz sessions"
+                    title="Real time quizes"
+                    text="Live quiz sessions with instant 
+feedback and timer-based 
+questions"
                 />
                 <Card 
                     icon="icon-session.png" // Replace with your icon name
-                    title="Live Session"
-                    text="Engage with your students in real-time learning"
+                    title="ML Analytics"
+                    text="Insights into student performance and learning patterns"
                 />
                 <Card 
                     icon="icon-manage.png" // Replace with your icon name
                     title="Easy Management"
-                    text="Manage your classroom and students"
+                    text="Simple quiz creation and student participation."
                 />
             </div>
         </section>

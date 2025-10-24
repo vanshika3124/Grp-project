@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="hero-left">
                 <h1>Smart Teaching Smarter Learning</h1>
                 <p>Making Learning Smarter, Faster, and More Connected Than Ever Before</p>
-                <a href="#" className="btn btn-green">Join Us Now</a> 
+                <a href="#" className="btn btn-green">Create a Quiz</a> 
             </div>
             <div className="hero-right">
                 <img src="/images/hero-image.png" alt="Classroom Illustration" />

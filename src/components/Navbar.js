@@ -5,18 +5,24 @@ const Navbar = () => {
   return (
     <nav className="navbar">
         <div className="container nav-container">
+            {/* Logo (Stays the same) */}
             <a href="#" className="nav-logo">
-                {/* USE YOUR LOGO from /public/images/logo.png */}
                 <img src="/images/logo.png" alt="SmartSync Logo" />
                 SmartSync
             </a>
-            <ul className="nav-menu">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Classroom</a></li>
-                <li><a href="#">Quiz</a></li>
-                <li><a href="#">FAQs</a></li>
-            </ul>
-            <a href="#" className="btn btn-primary">Login</a>
+
+            {/* --- NEW WRAPPER for links and button --- */}
+            <div className="nav-right">
+                <ul className="nav-menu">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Classroom</a></li>
+                    <li><a href="#">Quiz</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+                <a href="#" className="btn btn-green">Logout</a>
+            </div>
+            {/* --- END NEW WRAPPER --- */}
+
         </div>
     </nav>
   )
