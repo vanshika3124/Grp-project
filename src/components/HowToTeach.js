@@ -3,13 +3,18 @@ import React from 'react';
 
 const HowToTeach = () => {
   return (
-    // This outer section is just a wrapper.
-    // The .container div inside is what matters.
+    // Yeh wrapper section hai
     <section className="how-to-teach-wrapper">
-      <div className="container">
-        <div className="how-to-teach"> {/* This div gets the blue background */}
+       
+        {/* Yeh blue gradient box hai */}
+        <div className="how-to-teach"> 
+          
           <h3>How to Teach with SmartSync?</h3>
+          
+          {/* Content (2 columns) */}
           <div className="how-to-content">
+            
+            {/* Left Side: Steps */}
             <div className="how-to-steps">
               <ul>
                 <li><span>Sign in</span> to your SmartSync account</li>
@@ -18,13 +23,17 @@ const HowToTeach = () => {
                 <li><span>Start</span> a real-time session</li>
                 <li><span>Track</span> and analyze performance</li>
               </ul>
-              <a href="#" className="btn btn-green" style={{alignSelf: 'flex-start', marginTop: '1rem'}}>Login</a>
             </div>
+            
+            {/* Right Side: Image */}
             <div className="how-to-image">
-              {/* USE YOUR DIAGRAM from /public/images/how-to.png */}
               <img src="/images/how-to.png" alt="How to teach diagram" />
-            </div>
+             
           </div>
+          
+          {/* Button (neeche, center mein) */}
+          <a href="#" className="btn btn-green">Go to classroom</a>
+
         </div>
       </div>
     </section>

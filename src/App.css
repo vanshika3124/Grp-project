@@ -8,17 +8,28 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
     border-bottom: 1px solid #e5e7eb;
     height: 69px;
 }
 
+/* src/App.css */
+
 .nav-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
+    justify-content: space-between; /* Keeps logo left, group right */
+    align-items: center;
 }
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 3rem; 
+    /* 👇 ADD THIS LINE 👇 */
+    margin-left: auto; /* Pushes the whole group to the right */
+}
+
+/* ... (rest of your CSS) ... */
 
 /* ... (navbar styles) ... */
 
@@ -202,20 +213,21 @@
   padding: 4rem 0;
   background-color: #ffffff;
   font-family: "Inter", sans-serif;
+  
 }
 
 /* ========== Section Title ========== */
-.section-title {
+.start-section-title {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #000;
+  color: black;
   margin-bottom: 2.5rem;
-  text-align: left;
-  margin-left: 8%;
+  align-self: center;
+  margin-left: 10%;
   letter-spacing: 0.5px;
 }
 
-.section-title span {
+.start-section-title span {
   color: #2146d0; 
   /* ^^^ YEH SAHI HAI. Check your HTML, it should be:
      <h2 class="section-title">Start <span>Teaching</span></h2> */
@@ -234,7 +246,7 @@
   margin: 0 auto;
   padding: 2.5rem 3rem;
   box-shadow: none; /* CHANGED: Removed shadow */
-  height: 300px;
+  height: 350px;
 }
 
 /* ========== Teacher Photo ========== */
@@ -288,14 +300,15 @@
 }
 
 /* ========== Action Buttons (Right Side) ========== */
-.action-buttons button {
-  display: flex;
-  flex-direction: column; /* YEH ZAROORI HAI */
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem; /* Icon aur text ke beech ka gap */
-}
+ 
+ /* src/App.css */
 
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+   /* <-- ISKO BADHA DO (from 1rem) */
+}
 .action-buttons button img {
   width: 32px; /* Icon ka size */
   height: 32px;
@@ -318,32 +331,32 @@
   flex-direction: column; /* CHANGED: Stacks icon on top of text */
   align-items: center;
   justify-content: center;
-  gap: 0.7rem; /* CHANGED: Gap between icon and text */
+  gap: 0.1rem; /* CHANGED: Gap between icon and text */
 }
 
 /* === ADDED: Rule for icons inside buttons === */
 /* (Assuming you are using <img> tags for icons) */
 .action-buttons button img {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
 .quiz-btn {
-  background-color: #eef2ff; /* CHANGED: Lighter BG */
-  border-color: #c7d2fe; /* CHANGED: Border color */
+  background-color: #C7D2FE; /* CHANGED: Lighter BG */
+  border-color: gray; /* CHANGED: Border color */
   color: #000;
 }
 
 .classroom-btn {
-  background-color: #d1fae5; /* CHANGED: Lighter BG */
-  border-color: #a7f3d0; /* CHANGED: Border color */
+  background-color: #CBFEEA; /* CHANGED: Lighter BG */
+  border-color:gray; /* CHANGED: Border color */
   color: #000;
 }
 
 .progress-btn {
-  background-color: #ffedd5; /* CHANGED: Lighter BG */
-  border-color: #fdba74; /* CHANGED: Border color */
+  background-color: #FFDAB9; /* CHANGED: Lighter BG */
+  border-color: gray; /* CHANGED: Border color */
   color: #000;
 }
 
@@ -381,18 +394,255 @@
   }
 }
 
-/* ================== HOW TO TEACH ================== */
+/* ================== START TEACHING (Logged-Out Version) ================== */
+.start-teaching {
+    padding: 4rem 0;
+    background: var(--color-white);
+}
+
+/* Yeh 'Start Teaching' ke liye 3-column grid hai */
+.teaching-profile {
+    display: grid;
+    /* 3 columns: Image, Form, Buttons */
+    grid-template-columns: 0.8fr 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+/* Left: Silhouette Image */
+.profile-card-placeholder {
+    background: var(--color-white);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+    border: 1px solid #e5e7eb;
+}
+
+.profile-card-placeholder img {
+    width: 150px; 
+    height: 150px;
+    margin: 0 auto;
+    /* Silhouette effect */
+    filter: brightness(0.1) contrast(0.1); 
+    opacity: 0.6;
+}
+
+/* Middle: "Your Name" Form */
+.form-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 2px dashed #cbd5e1; /* Dashed border */
+    border-radius: 1rem;
+    height: 100%; /* Full height */
+    justify-content: center;
+}
+
+.form-input-placeholder {
+    background: var(--color-bg);
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+/* Right: Action Buttons */
+.action-buttons-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    justify-content: center;
+}
+
+.action-box {
+    background: var(--color-bg);
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.action-box i {
+    color: var(--color-primary);
+}
+
+/* ================== START TEACHING (Logged-Out - Updated Design) ================== */
+.start-teaching {
+    padding: 4rem 0;
+    background: var(--color-white);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Outer grey container */
+.teaching-profile-container {
+    display: grid;
+    /* 3 columns: Image, Form, Buttons */
+    grid-template-columns: 0.8fr 1.2fr 0.8fr; /* Adjusted column sizes */
+    gap: 2rem;
+    align-items: stretch; /* Make columns same height */
+    margin-bottom: 4rem;
+    background-color: #f8fafc; /* Light grey background */
+    padding: 2.5rem;          
+    border-radius: 1.5rem;     
+    border: 1px solid #e5e7eb; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+}
+
+/* Left: Teacher Image */
+.teacher-photo-container {
+    display: flex;
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
+}
+.teacher-photo-container img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    height: 300px; /* Limit height */
+    object-fit: contain;
+    border-radius: 1rem; /* Rounded corners for image if needed */
+}
+
+/* Middle: Placeholder Form */
+.form-placeholder-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Increased gap */
+    padding: 2rem; /* Inner padding */
+    border: 2px dashed #cbd5e1; /* Dashed border */
+    border-radius: 1rem;
+    text-align: center; /* Center text */
+    justify-content: center; /* Center items vertically */
+}
+.form-placeholder-middle h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary); /* Blue text */
+    font-weight: 600;
+}
+.form-input-placeholder-middle {
+    background: transparent; /* No background */
+    padding: 0.5rem;
+    color: var(--color-text); /* Regular text color */
+    font-weight: 500;
+    font-size: 1.1rem; /* Bigger font */
+}
+.form-input-placeholder-middle .star-icon {
+    font-size: 1.5rem; /* Bigger star */
+    color: #f59e0b; /* Yellow star */
+    margin-right: 0.25rem;
+}
+.login-button-middle {
+    align-self: center; /* Center button */
+    margin-top: 1rem;
+}
+
+/* Right: Action Buttons */
+.action-buttons-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between buttons */
+    justify-content: center; /* Center buttons vertically */
+}
+.action-button {
+  display: flex;
+  flex-direction: column;  /* Stack icon over text */
+  align-items: center;
+  justify-content: center; 
+  gap: 0.5rem;          /* Gap between icon and text */
+  border-style: solid;
+  border-width: 2px;
+  font-weight: 600;
+  padding: 1rem 1.5rem; 
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; /* Full width */
+  text-align: center; 
+}
+.action-button img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.quiz-btn {
+  background-color: #eef2ff; /* Light Blue BG */
+  border-color: #c7d2fe; /* Blue Border */
+  color: var(--color-dark);
+}
+.classroom-btn {
+  background-color: #d1fae5; /* Light Green BG */
+  border-color: #a7f3d0; /* Green Border */
+  color: var(--color-dark);
+}
+.progress-btn {
+  background-color: #ffedd5; /* Light Orange BG */
+  border-color: #fdba74; /* Orange Border */
+  color: var(--color-dark);
+}
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 900px) {
+    .teaching-profile-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+    .teacher-photo-container {
+        display: none; /* Hide teacher on small screens */
+    }
+    .action-buttons-right {
+        flex-direction: row; /* Buttons side-by-side */
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .action-button {
+        width: auto; /* Auto width for buttons */
+    }
+}
+/* ================== HOW TO TEACH (BILKUL EXACT) ================== */
+
+/* Wrapper ko full-width rakhte hain */
+.how-to-teach-wrapper {
+  padding: 4rem 0; /* Upar-neeche space */
+}
+
+/* Yeh hai main blue gradient box */
 .how-to-teach {
-    background: var(--color-primary);
+    background-color: #3b82f6; /* Fallback */
+    /* YEH HAI AAPKA GRADIENT */
+    background-image: linear-gradient(to right, #1E3A8A, #8E9DFF);
     color: var(--color-white);
-    border-radius: 1.5rem;
+    border-radius: 1.5rem; /* Bada rounded corner */
     padding: 3rem;
+    text-align: center; /* h3 aur button ko center karega */
+    overflow: hidden;
+    width: 97%;      /* Isse width 95% set hogi */
+    margin: 0 auto;  /* Isse box center mein aa jayega */
+     
 }
 
 .how-to-teach h3 {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Title ke neeche zyada space */
 }
 
 .how-to-content {
@@ -400,164 +650,298 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
+    text-align: left; /* Steps ko left-align karega */
+    margin-bottom: 2.5rem; /* Button se pehle space */
 }
 
+/* --- YEH CUSTOM LIST STYLE HAI --- */
 .how-to-steps ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    list-style: none;
+    position: relative;
+    padding-left: 1rem; /* Icons ke liye jagah */
 }
 
 .how-to-steps li {
     font-size: 1.1rem;
     font-weight: 300;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.how-to-steps li::before {
-    content: '✓';
-    font-weight: 900;
-    color: var(--color-green);
-    font-size: 1.2rem;
+    position: relative;
+    padding-left: 2rem; /* Icon aur text ke beech gap */
+    margin-bottom: 1.5rem; /* Har step ke beech gap */
 }
 
 .how-to-steps li span {
-    font-weight: 600;
+    font-weight: 600; /* Pehla word bold */
 }
 
-.how-to-image img {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-
-/* ================== HOW TO TEACH ================== */
-.how-to-teach {
-    background: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 1.5rem;
-    padding: 3rem;
-}
-
-.how-to-teach h3 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.how-to-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-}
-
-.how-to-steps ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.how-to-steps li {
-    font-size: 1.1rem;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
+/* The Circle */
 .how-to-steps li::before {
-    content: '✓';
-    font-weight: 900;
-    color: var(--color-green);
-    font-size: 1.2rem;
+    content: '';
+    position: absolute;
+    left: 0; /* Bilkul left mein */
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fcd34d; /* Yellow border */
+    border-radius: 50%;
+    background: transparent;
+    z-index: 2; /* Line ke upar */
 }
 
-.how-to-steps li span {
-    font-weight: 600;
+/* The Dotted Line */
+.how-to-steps li::after {
+    content: '';
+    position: absolute;
+    left: 8px; /* Circle ke center se */
+    top: 22px; /* Circle ke neeche se */
+    width: 2px;
+    height: calc(100% - 0.5rem); /* Poori height tak */
+    border-left: 2px dotted #fcd34d; /* DOTTED LINE */
+    z-index: 1; /* Circle ke peeche */
 }
 
+/* Last item ke liye changes */
+.how-to-steps li:last-child {
+     margin-bottom: 0;
+}
+
+.how-to-steps li:last-child::before {
+    background: #fcd34d; /* FILLED circle */
+}
+
+.how-to-steps li:last-child::after {
+    display: none; /* Aakhri item ke neeche line nahi */
+}
+/* --- Custom list end --- */
+
+
+/* Image ke peeche light grey box */
 .how-to-image img {
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
+    background: #f8fafc; /* Light grey background */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 1rem; /* Image ke around padding */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ================== REVIEWS ================== */
+/* Button ko center mein rakhega */
+.how-to-teach .btn-green {
+    align-self: center;
+    margin-top: 1rem; 
+}
+
+/* ================== REVIEWS SECTION ================== */
 .reviews {
     padding: 4rem 0;
-    background: var(--color-bg);
+    background: #CFE7F5; /* Light blue bg */
+    overflow: hidden;
 }
 
-.reviews-container {
+/* Title mein "members" ko blue karne ke liye */
+.reviews .section-title span {
+    color: var(--color-primary);
+}
+
+.reviews-content-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Illustration ko 30% aur cards ko 70% jagah */
+    grid-template-columns: 0.3fr 0.7fr;
+    align-items: center;
     gap: 2rem;
-    /* This is just to show 3, not a real slider */
+}
+
+.review-illustration img {
+    max-width: 300px;
+}
+
+.reviews-slider {
+    position: relative;
+    /* Cards ko side-by-side dikhane ke liye */
+    overflow: hidden;
+}
+
+.reviews-cards-track {
+    display: flex; /* YEH CARDS KO LINE MEIN LAGAYEGA */
+    gap: 1.5rem; /* Cards ke beech ka gap */
+    /* Slider ke liye, track ko move karna padta hai, abhi static hai */
 }
 
 .review-card {
     background: var(--color-white);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    min-width: 300px; /* Card ki width set karega */
+    display: flex;
+    flex-direction: column;
 }
 
-.review-card p {
-    font-style: italic;
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1rem;
 }
 
-.review-card h4 {
+.review-card-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-blue);
+}
+
+.review-card-person h4 {
     color: var(--color-dark);
-    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
 }
 
-.review-card span {
+.review-card-person p {
+    font-size: 0.85rem;
+    color: var(--color-text);
+}
+
+.review-card-stars {
+    color: #f59e0b; /* Yellow stars */
+    margin-bottom: 1rem;
+}
+
+.review-card-text {
     font-size: 0.9rem;
-    color: #f59e0b; /* Yellow for stars */
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Taki card ki height same rahe */
 }
 
-/* ================== FAQS ================== */
+.review-card-date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    text-align: right;
+}
+
+/* Slider arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-white);
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slider-arrow.prev {
+    left: -20px;
+}
+
+.slider-arrow.next {
+    right: -20px;
+}
+/* ================== FAQS SECTION ================== */
 .faqs {
     padding: 4rem 0;
+    background: #CFE7F5; /* Light blue bg */
+    text-align: center; /* Title aur button ko center karega */
 }
 
+/* Title ko blue karega */
+.faqs .section-title {
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+/* Yeh hai bada white card */
 .faqs-container {
     max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    margin: 0 auto; /* Card ko center karega */
+    background: var(--color-white);
+    border-radius: 1.5rem; /* Bade rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 2.5rem;
+    text-align: left; /* Content ko left-align karega */
 }
 
 .faq-item {
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
 }
 
-.faq-item h4 {
+.faq-item:last-child {
+    border-bottom: none; /* Aakhri item ke neeche line nahi */
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
     color: var(--color-dark);
-    margin-bottom: 0.5rem;
-    /* Add a '+' or 'v' icon here later if you want */
+    font-size: 1.1rem;
+    margin-right: 1rem; /* Icon se space */
 }
 
-.faq-item p {
+.faq-question i {
+    color: var(--color-primary);
+    font-size: 1rem; /* Icon size */
+    transition: transform 0.3s ease;
+}
+
+/* Icon ko rotate karega */
+.faq-item.open .faq-question i {
+     transform: rotate(180deg);
+}
+
+/* Answer ka animation */
+.faq-answer {
+    max-height: 0; /* Default mein band */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding-top 0.4s ease-out;
+}
+
+.faq-answer p {
     font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
 }
 
-/* ================== BENEFITS ================== */
+/* Jab item khulega */
+.faq-item.open .faq-answer {
+    max-height: 200px; /* Badi height (taki content fit ho) */
+    padding-top: 1rem; /* Upar se space */
+}
+
+/* "See all FAQs" button */
+.faq-button {
+    margin-top: 2rem; /* White card se space */
+    display: inline-flex; /* Icon ko align karne ke liye */
+    align-items: center;
+    gap: 0.5rem; /* Text aur icon ke beech space */
+}
+
+/* ================== BENEFITS SECTION ================== */
 .benefits {
-    padding: 4rem 0;
-    background: var(--color-bg);
+    padding: 4rem 0 2rem; /* Upar neeche padding */
+    background: var(--color-white); /* White background */
+}
+
+.benefits .section-title {
+    color: var(--color-primary); /* Blue title */
+    margin-bottom: 3rem;
 }
 
 .benefits-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 2.5rem; /* Beech mein space */
+    row-gap: 3rem; /* Rows ke beech space */
 }
 
 .benefit-item {
@@ -568,43 +952,50 @@
     width: 70px;
     height: 70px;
     margin: 0 auto 1rem;
+    object-fit: contain;
 }
 
 .benefit-item h4 {
-    color: var(--color-dark);
+    color: var(--color-primary); /* Blue text */
     font-size: 1.1rem;
+    font-weight: 500;
 }
 
-/* ================== STATS ================== */
+/* ================== STATS SECTION ================== */
 .stats {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem; /* Upar neeche padding */
     background: var(--color-white);
 }
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
     gap: 2rem;
     text-align: center;
+    border-top: 1px solid #e5e7eb; /* Upar line hai */
+    padding-top: 3rem;
 }
 
-.stat-item {
-    background: var(--color-bg);
-    padding: 2rem;
-    border-radius: 1rem;
+.stat-item img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    object-fit: contain;
 }
 
 .stat-item h2 {
     font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
+    color: var(--color-green); /* Green number */
+    font-weight: 600;
+    margin-bottom: 0.25rem;
 }
 
 .stat-item p {
     font-size: 1.1rem;
-    color: var(--color-dark);
+    color: var(--color-dark); /* Dark text */
     font-weight: 500;
 }
+ 
 
 /* ================== FOOTER ================== */
 .footer {
@@ -680,4 +1071,13 @@
     padding-top: 2rem;
     border-top: 1px solid var(--color-text);
     font-size: 0.9rem;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1; /* Taki content hamesha footer ko push kare */
 }

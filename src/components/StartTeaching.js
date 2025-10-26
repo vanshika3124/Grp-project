@@ -1,37 +1,54 @@
-import React from "react";
+// src/components/StartTeaching.js
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StartTeaching = () => {
   return (
     <section className="start-teaching">
-      <h2 className="start-section-title">
-        Start <span>Teaching</span>
-      </h2>
+      <div className="container">
+        <h2 className="section-title">Start Teaching</h2>
 
-      <div className="teaching-profile">
-        {/* Left Side - Teacher Image */}
-        <div className="teacher-photo">
-          <img src="/images/teacher.png" alt="Anjali Singh" />
-        </div>
+        {/* Outer grey container */}
+        <div className="teaching-profile-container">
 
-        {/* Center - Profile Info */}
-        <div className="teacher-info">
-          <h3>Anjali Singh</h3>
-          <p>
-            You have taken 100+ quizzes.
-            <br />2 classrooms. 150 students
-          </p>
-          <p className="experience"> 15 years+ experience</p>
-        </div>
+          {/* Left Side: Teacher Image */}
+          <div className="teacher-photo-container">
+            {/* Make sure teacher-real.png is in /public/images/ */}
+            <img src="/images/teacher-real.png" alt="Teacher" />
+          </div>
 
-        {/* Right Side - Buttons */}
-        <div className="action-buttons">
-          <button className="quiz-btn">create a quiz</button>
-          <button className="classroom-btn">👥 Go to classroom</button>
-          <button className="progress-btn">📈 Track progress</button>
+          {/* Middle: Placeholder Form */}
+          <div className="form-placeholder-middle">
+            <h3>Your Name</h3>
+            <div className="form-input-placeholder-middle">
+              <span>Educational qualification</span>
+            </div>
+            <div className="form-input-placeholder-middle">
+              <span className="star-icon">⭐</span> experience
+            </div>
+            <Link to="/login" className="btn btn-green login-button-middle">Login</Link>
+          </div>
+
+          {/* Right Side: Action Buttons */}
+          <div className="action-buttons-right">
+            <button className="action-button quiz-btn">
+              <img src="/images/quiz-icon.png" alt="" />
+              <span>create a quiz</span>
+            </button>
+            <button className="action-button classroom-btn">
+              <img src="/images/class.png" alt="" />
+              <span>Go to classroom</span>
+            </button>
+            <button className="action-button progress-btn">
+              <img src="/images/track.png" alt="" />
+              <span>Track progress</span>
+            </button>
+          </div>
+
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default StartTeaching;

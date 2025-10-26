@@ -1,23 +1,27 @@
 // src/components/Hero.js
 import React from 'react';
-import InfoCards from './InfoCards'; // <-- 1. IMPORT IT HERE
+import InfoCards from './InfoCards';
 
-const Hero = () => {
+// DEKHO, yahan 'onQuizClick' prop receive kiya
+const Hero = ({ onQuizClick }) => { 
   return (
     <header className="hero">
-        <div className="container hero-container">
-            <div className="hero-left">
-                <h1>Smart Teaching Smarter Learning</h1>
-                <p>Making Learning Smarter, Faster, and More Connected Than Ever Before</p>
-                <a href="#" className="btn btn-green">Create a Quiz</a> 
-            </div>
-            <div className="hero-right">
-                <img src="/images/hero-image.png" alt="Classroom Illustration" />
-            </div>
+      <div className="container hero-container">
+        <div className="hero-left">
+          <h1>Smart Teaching Smarter Learning</h1>
+          <p>Making Learning Smarter, Faster, and More Connected Than Ever Before</p>
+          
+          {/* YAHAN 'href' hata kar 'onClick' laga diya */}
+          <button onClick={onQuizClick} className="btn btn-green">
+            Create a Quiz
+          </button>
+          
         </div>
-
-        <InfoCards /> {/* <-- 2. ADD IT HERE (inside <header> but after .hero-container) */}
-        
+        <div className="hero-right">
+          <img src="/images/hero-image.png" alt="Classroom Illustration" />
+        </div>
+      </div>
+      <InfoCards />
     </header>
   )
 }

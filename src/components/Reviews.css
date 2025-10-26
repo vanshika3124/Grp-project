@@ -1,0 +1,214 @@
+/* src/components/Reviews.css */
+
+.reviews-section {
+    background-color: #CFE7F5; /* Light blue background */
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden; /* Hide overflowing parts of the carousel */
+}
+
+.reviews-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content when girl is not there */
+    gap: 3rem; /* Space between girl and reviews */
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto;
+}
+
+.girl-illustration {
+  flex-shrink: 0;
+  width: 420px;
+  margin-left: -20px;
+  margin-right: -260px; /* <-- CHANGE 1: Right margin aur negative kiya taaki Sunil Rao ka card kareeb aaye */
+  position: relative;
+  z-index: 10;
+  top: 100px; /* <-- CHANGE 2: Ladki ko 40px neeche kiya. Aap is value ko adjust kar sakte ho. */
+}
+.girl-illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.reviews-content {
+    flex-grow: 1; /* Allows reviews content to take available space */
+    position: relative;
+    padding: 0 1rem; /* Padding for the content inside */
+}
+
+.section-title-reviews {
+    font-size: 2.5rem;
+    color: var(--color-dark); /* Dark blue heading */
+    text-align: left;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+.reviews-carousel-container {
+    display: flex;
+    align-items: center; /* Vertically align arrows with reviews */
+    position: relative;
+    width: 100%;
+    padding: 0 2rem; /* Space for arrows to overlap slightly */
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 1.5rem;
+    overflow: hidden; /* Ensure reviews don't spill outside grid */
+    flex-grow: 1; /* Allow grid to expand */
+    padding: 0.5rem; /* Little padding for inner shadow */
+}
+
+.review-card {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100%; /* Ensure cards are same height */
+    box-sizing: border-box; /* Include padding/border in height */
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid var(--color-primary); /* Blue border for avatar */
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.reviewer-title {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.4rem;
+}
+
+.stars .fas.fa-star {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 0.9rem;
+    margin-right: 0.1rem;
+}
+
+.review-text {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allow text to take up space */
+}
+
+.review-time {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    text-align: right;
+    margin-top: auto; /* Push time to bottom */
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    background: var(--color-white);
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Prevent arrows from shrinking */
+    position: absolute; /* Position relative to .reviews-carousel-container */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.carousel-arrow:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-arrow.prev {
+    left: 0;
+}
+
+.carousel-arrow.next {
+    right: 0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .reviews-section .container {
+        flex-direction: column; /* Stack girl and reviews on smaller screens */
+        gap: 2rem;
+    }
+    .girl-illustration {
+        width: 180px; /* Smaller girl */
+        margin: 0 auto;
+    }
+    .reviews-content {
+        padding: 0 1rem;
+    }
+    .section-title-reviews {
+        text-align: center; /* Center title */
+    }
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 4rem 0;
+    }
+    .section-title-reviews {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr; /* 1 card on small screens */
+    }
+    .carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    .carousel-arrow.prev { left: -10px; }
+    .carousel-arrow.next { right: -10px; }
+    .reviews-carousel-container {
+        padding: 0 1.5rem; /* Adjust padding for arrows */
+    }
+    .review-card {
+        padding: 1.5rem;
+    }
+}

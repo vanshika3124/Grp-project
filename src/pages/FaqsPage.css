@@ -1,0 +1,97 @@
+/* src/pages/FaqsPage.css */
+
+/* Wrapper for the standalone page */
+.faqs-page-wrapper {
+    padding: 8rem 0 4rem; /* Space above/below */
+    background: #e0f2fe; /* Light blue background */
+    min-height: calc(100vh - 60px - 200px); /* Adjust based on Navbar/Footer */
+    text-align: center; 
+}
+
+/* Title Styling */
+.faqs-page-wrapper .section-title {
+    color: var(--color-primary); /* Use variable from index.css */
+    margin-bottom: 2rem;
+    font-weight: 600; 
+}
+
+/* The main white card */
+.faqs-container {
+    max-width: 900px; 
+    margin: 0 auto; 
+    background: var(--color-white); /* Use variable */
+    border-radius: 1.5rem; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); 
+    padding: 1rem 2.5rem 2rem; 
+    text-align: left; 
+}
+
+.faq-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: background-color 0.2s ease; 
+}
+.faq-item:hover {
+    background-color: #f8fafc; 
+}
+
+.faq-item:last-child {
+    border-bottom: none; 
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    color: var(--color-dark); /* Use variable */
+    font-size: 1.05rem; 
+    font-weight: 500; 
+    margin-right: 1rem; 
+    line-height: 1.5; 
+}
+
+.faq-question i {
+    color: var(--color-primary); /* Use variable */
+    font-size: 1rem; 
+    transition: transform 0.3s ease;
+    flex-shrink: 0; 
+}
+
+/* Rotate icon when open */
+.faq-item.open .faq-question i {
+     transform: rotate(180deg);
+}
+
+/* Answer animation */
+.faq-answer {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, margin-top 0.4s ease-out; /* Changed from padding-top */
+}
+
+.faq-answer p {
+    font-size: 0.9rem; 
+    line-height: 1.7; 
+    color: var(--color-text); /* Use variable */
+}
+
+/* Styles when item is open */
+.faq-item.open .faq-answer {
+    max-height: 300px; 
+    margin-top: 0.8rem; /* Use margin instead of padding */
+}
+
+/* "See all FAQs" button styles (if you add it back) */
+.faq-button {
+    margin-top: 2.5rem; 
+    display: inline-flex; 
+    align-items: center;
+    gap: 0.5rem; 
+}
+.faq-button i {
+    font-size: 0.8em; 
+}
