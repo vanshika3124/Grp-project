@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Apne saare landing page components import karo
-import Hero from '../components/Hero';
+import Hero from ' ../components/Hero';
   
 import StartTeaching from '../components/StartTeaching'; // "Your Name" waala
 import HowToTeach from '../components/HowToTeach';
