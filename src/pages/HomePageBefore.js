@@ -3,7 +3,7 @@ import React from 'react';
 
 // Apne saare landing page components import karo
 import Hero from '../components/Hero';
-import InfoCards from '../components/InfoCards'; // YEH ZAROORI HAI
+  
 import StartTeaching from '../components/StartTeaching'; // "Your Name" waala
 import HowToTeach from '../components/HowToTeach';
 import Reviews from '../components/Reviews';

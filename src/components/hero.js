@@ -11,7 +11,7 @@ const Hero = ({ onQuizClick }) => {
           <h1>Smart Teaching Smarter Learning</h1>
           <p>Making Learning Smarter, Faster, and More Connected Than Ever Before</p>
           
-          {/* YAHAN 'href' hata kar 'onClick' laga diya */}
+         
           <button onClick={onQuizClick} className="btn btn-green">
             Create a Quiz
           </button>

@@ -1,6 +1,6 @@
 // src/pages/HomePageAfter.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // <-- 1. IMPORT KARO
+import { useNavigate } from 'react-router-dom';
 
 // Apne saare components import karo
 import Hero from '../components/Hero';
@@ -22,10 +22,11 @@ const HomePageAfter = () => {
 
   return (
     <>
-      {/* 3. YAHAN FUNCTION PASS KIYA */}
+      {/* 3. YAHAN FUNCTION PASS KIYA - ISE THEEK KARDIYA HAI */}
       <Hero onQuizClick={handleCreateQuizClick} /> 
       
       <DashboardCard />
+    
       <HowToTeach />
       <Reviews />
       <FAQs />
