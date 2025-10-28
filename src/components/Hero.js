@@ -1,8 +1,8 @@
-// src/components/Hero.js
+
 import React from 'react';
 import InfoCards from './InfoCards';
 
-// DEKHO, yahan 'onQuizClick' prop receive kiya
+ 
 const Hero = ({ onQuizClick }) => { 
   return (
     <header className="hero">
